@@ -4,15 +4,26 @@ import { mockListings } from '../data/mockListings'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import Badge from '../components/ui/Badge'
+import PageHeader from '../components/PageHeader'
 import { Edit, MessageSquare, CheckCircle, Clock } from 'lucide-react'
 
 export default function Dashboard(){
   return (
     <div className="max-w-4xl">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Seller Dashboard</h1>
-        <p className="text-gray-600 mt-2">Manage your listings, view messages, and track verification status.</p>
-      </div>
+      <PageHeader
+        title="Seller Dashboard"
+        subtitle="Manage your listings, view messages, and track verification status."
+        actions={(
+          <>
+            <Link to="/dashboard/messages">
+              <Button variant="outline">View Messages</Button>
+            </Link>
+            <Link to="/create">
+              <Button variant="primary">Create New</Button>
+            </Link>
+          </>
+        )}
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         <Card className="p-6 bg-gradient-to-br from-blue-50 to-transparent">
@@ -53,7 +64,7 @@ export default function Dashboard(){
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-semibold text-gray-900">Your Listings</h2>
         <Link to="/create">
-          <Button variant="primary">Create New</Button>
+          <Button variant="secondary">Add Listing</Button>
         </Link>
       </div>
 

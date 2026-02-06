@@ -5,6 +5,7 @@ import Card from '../components/ui/Card'
 import Input from '../components/ui/Input'
 import Textarea from '../components/ui/Textarea'
 import Button from '../components/ui/Button'
+import PageHeader from '../components/PageHeader'
 
 export default function DashboardListingEdit(){
   const { id } = useParams()
@@ -33,8 +34,15 @@ export default function DashboardListingEdit(){
 
   return (
     <div className="max-w-2xl">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Edit Listing</h1>
-      <p className="text-gray-600 mb-6">Update your listing details</p>
+      <PageHeader
+        title="Edit Listing"
+        subtitle="Update your listing details and keep buyers informed."
+        actions={(
+          <Button variant="outline" onClick={() => navigate('/dashboard')}>
+            Back to Dashboard
+          </Button>
+        )}
+      />
       
       <Card className="p-6">
         <div className="space-y-4">
@@ -77,6 +85,14 @@ export default function DashboardListingEdit(){
             </Button>
           </div>
         </div>
+      </Card>
+      <Card className="p-5 mt-6 bg-gray-50">
+        <h3 className="font-semibold text-gray-900">Listing tips</h3>
+        <ul className="mt-3 text-sm text-gray-600 space-y-2">
+          <li>• Keep your title descriptive so buyers can find it faster.</li>
+          <li>• Add nearby landmarks, roads, or utilities in the description.</li>
+          <li>• Update the price if the market shifts.</li>
+        </ul>
       </Card>
     </div>
   )
