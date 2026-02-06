@@ -7,11 +7,6 @@ export default function Layout(){
   const isActive = (path) => location.pathname === path || location.pathname.startsWith(path + '/')
   const isDashboardActive = location.pathname === '/dashboard' || location.pathname.startsWith('/dashboard/edit')
   const isMessagesActive = location.pathname.startsWith('/dashboard/messages')
-  const [role, setRole] = useState(() => localStorage.getItem('userRole') || 'buyer')
-
-  useEffect(() => {
-    localStorage.setItem('userRole', role)
-  }, [role])
   
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -32,65 +27,40 @@ export default function Layout(){
               >
                 Browse
               </Link>
-              {role === 'seller' && (
-                <>
-                  <Link 
-                    to="/create" 
-                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                      isActive('/create') 
-                        ? 'bg-blue-100 text-blue-700' 
-                        : 'text-gray-700 hover:bg-gray-100'
-                    }`}
-                  >
-                    Create
-                  </Link>
-                  <Link 
-                    to="/dashboard" 
-                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                      isDashboardActive 
-                        ? 'bg-blue-100 text-blue-700' 
-                        : 'text-gray-700 hover:bg-gray-100'
-                    }`}
-                  >
-                    Dashboard
-                  </Link>
-                </>
-              )}
+              <Link 
+                to="/create" 
+                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                  isActive('/create') 
+                    ? 'bg-blue-100 text-blue-700' 
+                    : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                Create
+              </Link>
+              <Link 
+                to="/dashboard" 
+                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                  isDashboardActive 
+                    ? 'bg-blue-100 text-blue-700' 
+                    : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                <UserCircle className="w-4 h-4" />
+                <span className="hidden sm:inline">Profile</span>
+              </Link>
             </nav>
             <div className="flex items-center gap-2">
-              <div className="hidden sm:flex items-center bg-gray-100 rounded-full p-1">
-                <button
-                  type="button"
-                  onClick={() => setRole('buyer')}
-                  className={`px-3 py-1 text-xs font-semibold rounded-full transition ${
-                    role === 'buyer' ? 'bg-white shadow text-gray-900' : 'text-gray-600 hover:text-gray-900'
-                  }`}
-                >
-                  Buyer
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setRole('seller')}
-                  className={`px-3 py-1 text-xs font-semibold rounded-full transition ${
-                    role === 'seller' ? 'bg-white shadow text-gray-900' : 'text-gray-600 hover:text-gray-900'
-                  }`}
-                >
-                  Seller
-                </button>
-              </div>
-              {role === 'seller' && (
-                <Link
-                  to="/dashboard/messages"
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
-                    isMessagesActive
-                      ? 'bg-blue-100 text-blue-700'
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  <span className="hidden sm:inline">Messages</span>
-                </Link>
-              )}
+              <Link
+                to="/dashboard/messages"
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
+                  isMessagesActive
+                    ? 'bg-blue-100 text-blue-700'
+                    : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                <MessageSquare className="w-4 h-4" />
+                <span className="hidden sm:inline">Messages</span>
+              </Link>
               <Link
                 to="/profile"
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${

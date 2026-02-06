@@ -28,32 +28,12 @@ export default function Home(){
             <Link to="/browse">
               <Button variant="secondary">Browse Listings</Button>
             </Link>
-            {role === 'seller' && (
-              <Link to="/create">
-                <Button variant="primary">Create Listing</Button>
-              </Link>
-            )}
+            <Link to="/create">
+              <Button variant="primary">Create Listing</Button>
+            </Link>
           </>
         )}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        <Card className="p-6 border border-blue-100">
-          <h2 className="text-xl font-semibold text-gray-900">Buying land?</h2>
-          <p className="text-sm text-gray-600 mt-2">Explore verified listings with documented ownership and transparent pricing.</p>
-          <div className="mt-4 flex items-center gap-3">
-            <Button variant="primary" onClick={() => handleRoleChange('buyer')}>Set as Buyer</Button>
-            <Link to="/browse" className="text-sm text-blue-600 font-medium">View listings →</Link>
-          </div>
-        </Card>
-        <Card className="p-6 border border-green-100">
-          <h2 className="text-xl font-semibold text-gray-900">Selling land?</h2>
-          <p className="text-sm text-gray-600 mt-2">Upload your documents, get verified, and manage inquiries in one place.</p>
-          <div className="mt-4 flex items-center gap-3">
-            <Button variant="secondary" onClick={() => handleRoleChange('seller')}>Set as Seller</Button>
-            <Link to="/create" className="text-sm text-green-600 font-medium">Create listing →</Link>
-          </div>
-        </Card>
-      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card className="p-6 bg-gradient-to-br from-blue-50 to-transparent">
           <h2 className="text-2xl font-semibold text-gray-900 mb-2">Browse Listings</h2>

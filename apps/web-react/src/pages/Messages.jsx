@@ -20,37 +20,20 @@ export default function Messages(){
       />
       
       {messages.length === 0 ? (
-        <div className="space-y-4">
-          <Card className="p-12 text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-100 rounded-lg mb-4">
-              <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <p className="text-gray-600 text-lg">No messages yet</p>
-            <p className="text-gray-500 text-sm mt-1">When buyers inquire about your listings, messages will appear here</p>
-            <div className="mt-4">
-              <Link to="/browse">
-                <Button variant="secondary">Browse Listings</Button>
-              </Link>
-            </div>
-          </Card>
-          <Card className="p-5">
-            <h3 className="font-semibold text-gray-900">How conversations will look</h3>
-            <div className="mt-4 space-y-3">
-              <div className="p-4 rounded-lg border border-gray-200">
-                <p className="text-sm font-semibold text-gray-900">Grace Mwangi</p>
-                <p className="text-sm text-gray-600 mt-1">Interested in the 2-acre plot. Is the title deed ready?</p>
-                <p className="text-xs text-gray-500 mt-2">Example preview</p>
-              </div>
-              <div className="p-4 rounded-lg border border-gray-200">
-                <p className="text-sm font-semibold text-gray-900">Patrick Otieno</p>
-                <p className="text-sm text-gray-600 mt-1">Can we schedule a site visit this weekend?</p>
-                <p className="text-xs text-gray-500 mt-2">Example preview</p>
-              </div>
-            </div>
-          </Card>
-        </div>
+        <Card className="p-12 text-center">
+          <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-100 rounded-lg mb-4">
+            <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <p className="text-gray-600 text-lg">No messages yet</p>
+          <p className="text-gray-500 text-sm mt-1">When buyers inquire about your listings, messages will appear here</p>
+          <div className="mt-4">
+            <Link to="/browse">
+              <Button variant="secondary">Browse Listings</Button>
+            </Link>
+          </div>
+        </Card>
       ) : (
         <div className="space-y-3">
           {messages.map(msg => (

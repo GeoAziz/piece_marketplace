@@ -94,19 +94,6 @@ export default function DashboardListingEdit(){
           <li>• Update the price if the market shifts.</li>
         </ul>
       </Card>
-      <Card className="p-5 mt-6">
-        <h3 className="font-semibold text-gray-900">Listing performance</h3>
-        <div className="grid grid-cols-2 gap-4 mt-4 text-sm">
-          <div className="p-4 bg-gray-50 rounded-lg">
-            <p className="text-xs uppercase tracking-wide text-gray-500">Views (7 days)</p>
-            <p className="text-lg font-semibold text-gray-900 mt-1">24</p>
-          </div>
-          <div className="p-4 bg-gray-50 rounded-lg">
-            <p className="text-xs uppercase tracking-wide text-gray-500">Inquiries</p>
-            <p className="text-lg font-semibold text-gray-900 mt-1">3</p>
-          </div>
-        </div>
-      </Card>
     </div>
   )
 }

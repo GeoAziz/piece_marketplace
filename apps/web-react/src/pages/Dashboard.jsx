@@ -28,22 +28,6 @@ export default function Dashboard(){
         )}
       />
 
-      {pendingCount > 0 && (
-        <Card className="p-5 mb-6 border border-yellow-200 bg-yellow-50">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div>
-              <p className="text-sm font-semibold text-yellow-900">Verification needed</p>
-              <p className="text-sm text-yellow-800 mt-1">
-                {pendingCount} listing{pendingCount === 1 ? '' : 's'} still need documentation for approval.
-              </p>
-            </div>
-            <Link to="/create">
-              <Button variant="outline">Upload documents</Button>
-            </Link>
-          </div>
-        </Card>
-      )}
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         <Card className="p-6 bg-gradient-to-br from-blue-50 to-transparent">
           <div className="flex items-start justify-between">

@@ -42,15 +42,6 @@ export default function Profile(){
         <Card className="p-5">
           <h3 className="font-semibold text-gray-900">Verification status</h3>
           <p className="text-sm text-gray-600 mt-2">Upload documents to unlock trusted seller badges.</p>
-          <div className="mt-4">
-            <div className="flex items-center justify-between text-xs text-gray-500">
-              <span>Progress</span>
-              <span>1 of 3 completed</span>
-            </div>
-            <div className="h-2 bg-gray-200 rounded-full mt-2">
-              <div className="h-2 bg-blue-600 rounded-full w-1/3" />
-            </div>
-          </div>
           <Button variant="secondary" className="mt-4">Upload documents</Button>
         </Card>
         <Card className="p-5">
