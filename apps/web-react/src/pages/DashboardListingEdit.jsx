@@ -5,6 +5,7 @@ import Card from '../components/ui/Card'
 import Input from '../components/ui/Input'
 import Textarea from '../components/ui/Textarea'
 import Button from '../components/ui/Button'
+import PageHeader from '../components/PageHeader'
 
 export default function DashboardListingEdit(){
   const { id } = useParams()
@@ -33,8 +34,15 @@ export default function DashboardListingEdit(){
 
   return (
     <div className="max-w-2xl">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Edit Listing</h1>
-      <p className="text-gray-600 mb-6">Update your listing details</p>
+      <PageHeader
+        title="Edit Listing"
+        subtitle="Update your listing details and keep buyers informed."
+        actions={(
+          <Button variant="outline" onClick={() => navigate('/dashboard')}>
+            Back to Dashboard
+          </Button>
+        )}
+      />
       
       <Card className="p-6">
         <div className="space-y-4">
@@ -75,6 +83,27 @@ export default function DashboardListingEdit(){
             <Button variant="outline" onClick={() => navigate('/dashboard')}>
               Cancel
             </Button>
+          </div>
+        </div>
+      </Card>
+      <Card className="p-5 mt-6 bg-gray-50">
+        <h3 className="font-semibold text-gray-900">Listing tips</h3>
+        <ul className="mt-3 text-sm text-gray-600 space-y-2">
+          <li>• Keep your title descriptive so buyers can find it faster.</li>
+          <li>• Add nearby landmarks, roads, or utilities in the description.</li>
+          <li>• Update the price if the market shifts.</li>
+        </ul>
+      </Card>
+      <Card className="p-5 mt-6">
+        <h3 className="font-semibold text-gray-900">Listing performance</h3>
+        <div className="grid grid-cols-2 gap-4 mt-4 text-sm">
+          <div className="p-4 bg-gray-50 rounded-lg">
+            <p className="text-xs uppercase tracking-wide text-gray-500">Views (7 days)</p>
+            <p className="text-lg font-semibold text-gray-900 mt-1">24</p>
+          </div>
+          <div className="p-4 bg-gray-50 rounded-lg">
+            <p className="text-xs uppercase tracking-wide text-gray-500">Inquiries</p>
+            <p className="text-lg font-semibold text-gray-900 mt-1">3</p>
           </div>
         </div>
       </Card>

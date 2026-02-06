@@ -55,9 +55,24 @@ export default function ListingView(){
   )
 
   const verified = listing.badges && listing.badges.length > 0
+  const propertyFacts = [
+    { label: 'Acreage', value: listing.size || listing.acreage || 'Not specified' },
+    { label: 'Title type', value: listing.titleType || 'Not specified' },
+    { label: 'Utilities', value: listing.utilities || 'Not specified' },
+    { label: 'Road access', value: listing.accessRoad || 'Not specified' }
+  ]
 
   return (
     <div className="max-w-4xl">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
+        <Link to="/browse" className="text-sm text-blue-600 hover:text-blue-700">
+          ← Back to browse
+        </Link>
+        <div className="flex flex-wrap gap-2">
+          <Button variant="outline">Save Listing</Button>
+          <Button variant="secondary">Share</Button>
+        </div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-2">
           <Card className="p-6">
@@ -107,6 +122,17 @@ export default function ListingView(){
                 </div>
               </div>
             )}
+          </Card>
+          <Card className="p-6 mt-6">
+            <h3 className="font-semibold text-gray-900 mb-4">Property facts</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {propertyFacts.map((fact) => (
+                <div key={fact.label} className="p-4 bg-gray-50 rounded-lg">
+                  <p className="text-xs uppercase tracking-wide text-gray-500">{fact.label}</p>
+                  <p className="text-sm font-semibold text-gray-900 mt-1">{fact.value}</p>
+                </div>
+              ))}
+            </div>
           </Card>
         </div>
 
