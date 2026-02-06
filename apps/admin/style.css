@@ -1,0 +1,13 @@
+body { font-family: system-ui, sans-serif; background:#f7f8fb; color:#111 }
+.container { max-width:900px; margin:24px auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.06) }
+h1 { margin-top:0 }
+textarea { width:100%; font-family:monospace }
+.controls { margin:8px 0 }
+.controls button { margin-right:8px }
+.list { margin-top:12px }
+.item { border:1px solid #eee; padding:12px; border-radius:6px; margin-bottom:8px }
+.meta { font-size:13px; color:#333 }
+.actions { margin-top:8px }
+.actions button, .actions select, .actions input { margin-right:6px }
+.output { margin-top:8px; font-size:13px; color:#006 }
+.empty { color:#666 }

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin — Kenya Land Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Admin Review Console</h1>
+
+      <label>Admin ID Token (paste here):</label>
+      <textarea id="idToken" placeholder="Paste Firebase ID token..." rows="3"></textarea>
+
+      <div class="controls">
+        <button id="btnLoadQueue">Load Review Queue</button>
+        <button id="btnAuditLogs">Load Audit Logs</button>
+      </div>
+
+      <section>
+        <h2>Review Queue</h2>
+        <div id="queue" class="list"></div>
+      </section>
+
+      <section>
+        <h2>Audit Logs</h2>
+        <div id="audit" class="list"></div>
+      </section>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{color:#0f172a}
+input{padding:8px; border:1px solid #e5e7eb; border-radius:4px; width:100%}
+button{background:#0B5FFF;color:white;padding:8px 12px;border:none;border-radius:6px;cursor:pointer}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kenya Land Marketplace — Web (MVP)</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Seller: Create Listing & Upload Evidence</h1>
+
+      <label>Your ID Token (paste):</label>
+      <textarea id="idToken" rows="3" placeholder="Paste Firebase ID token here"></textarea>
+
+      <section class="card">
+        <h2>Create Listing</h2>
+        <input id="title" placeholder="Title" />
+        <input id="location" placeholder="Location" />
+        <input id="price" placeholder="Price" />
+        <textarea id="description" placeholder="Description"></textarea>
+        <button id="btnCreate">Create Listing</button>
+        <div id="createResult" class="output"></div>
+      </section>
+
+      <section class="card">
+        <h2>Upload Evidence</h2>
+        <input id="listingId" placeholder="Listing ID" />
+        <input id="fileInput" type="file" />
+        <select id="docType">
+          <option value="title">Title</option>
+          <option value="survey_plan">Survey Plan</option>
+          <option value="photo">Photo</option>
+        </select>
+        <button id="btnGetUploadUrl">Get Upload URL</button>
+        <div id="uploadResult" class="output"></div>
+      </section>
+
+      <section class="card">
+        <h2>Public Listing View</h2>
+        <input id="publicListingId" placeholder="Listing ID" />
+        <button id="btnView">View Listing</button>
+        <div id="publicView" class="output"></div>
+      </section>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
