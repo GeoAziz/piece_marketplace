@@ -1,13 +1,23 @@
 import React from 'react'
 import Card from '../components/ui/Card'
+import PageHeader from '../components/PageHeader'
+import { Link } from 'react-router-dom'
+import Button from '../components/ui/Button'
 
 export default function Messages(){
   const messages = []
   
   return (
     <div className="max-w-4xl">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Messages</h1>
-      <p className="text-gray-600 mb-6">Communication from buyers interested in your listings</p>
+      <PageHeader
+        title="Messages"
+        subtitle="Communication from buyers interested in your listings."
+        actions={(
+          <Link to="/dashboard">
+            <Button variant="outline">Back to Dashboard</Button>
+          </Link>
+        )}
+      />
       
       {messages.length === 0 ? (
         <Card className="p-12 text-center">
@@ -18,6 +28,11 @@ export default function Messages(){
           </div>
           <p className="text-gray-600 text-lg">No messages yet</p>
           <p className="text-gray-500 text-sm mt-1">When buyers inquire about your listings, messages will appear here</p>
+          <div className="mt-4">
+            <Link to="/browse">
+              <Button variant="secondary">Browse Listings</Button>
+            </Link>
+          </div>
         </Card>
       ) : (
         <div className="space-y-3">

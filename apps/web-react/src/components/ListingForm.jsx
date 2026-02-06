@@ -3,6 +3,7 @@ import Input from './ui/Input'
 import Textarea from './ui/Textarea'
 import Button from './ui/Button'
 import Card from './ui/Card'
+import PageHeader from './PageHeader'
 import { Upload, AlertCircle } from 'lucide-react'
 
 export default function ListingForm(){
@@ -118,8 +119,10 @@ export default function ListingForm(){
 
   return (
     <div className="max-w-2xl">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Create Listing</h1>
-      <p className="text-gray-600 mb-6">List your land and upload evidence documents for verification.</p>
+      <PageHeader
+        title="Create Listing"
+        subtitle="List your land and upload evidence documents for verification."
+      />
       
       <Card className="p-6">
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -205,6 +208,14 @@ export default function ListingForm(){
             {loading ? 'Creating...' : 'Create Listing'}
           </Button>
         </form>
+      </Card>
+      <Card className="p-5 mt-6 bg-blue-50 border border-blue-100">
+        <h3 className="font-semibold text-gray-900">Verification checklist</h3>
+        <ul className="mt-3 text-sm text-gray-600 space-y-2">
+          <li>• Provide a clear title that includes acreage and county.</li>
+          <li>• Upload legible documents (PDF or JPG) to speed approval.</li>
+          <li>• Add contact details in the description for faster follow-up.</li>
+        </ul>
       </Card>
     </div>
   )

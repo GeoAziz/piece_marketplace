@@ -3,12 +3,21 @@ import Card from '../components/ui/Card'
 import Avatar from '../components/ui/Avatar'
 import Button from '../components/ui/Button'
 import Input from '../components/ui/Input'
+import PageHeader from '../components/PageHeader'
+import { Link } from 'react-router-dom'
 
 export default function Profile(){
   return (
     <div className="max-w-2xl">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">My Profile</h1>
-      <p className="text-gray-600 mb-6">Manage your seller information and preferences</p>
+      <PageHeader
+        title="My Profile"
+        subtitle="Manage your seller information and preferences."
+        actions={(
+          <Link to="/dashboard">
+            <Button variant="outline">View Dashboard</Button>
+          </Link>
+        )}
+      />
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card className="p-6 md:col-span-1">
@@ -27,6 +36,18 @@ export default function Profile(){
             <Input label="Phone" type="tel" placeholder="+254 7XX XXX XXX" />
             <Button variant="primary">Save Changes</Button>
           </div>
+        </Card>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <Card className="p-5">
+          <h3 className="font-semibold text-gray-900">Verification status</h3>
+          <p className="text-sm text-gray-600 mt-2">Upload documents to unlock trusted seller badges.</p>
+          <Button variant="secondary" className="mt-4">Upload documents</Button>
+        </Card>
+        <Card className="p-5">
+          <h3 className="font-semibold text-gray-900">Notification preferences</h3>
+          <p className="text-sm text-gray-600 mt-2">Get updates when buyers message you or listings are approved.</p>
+          <Button variant="outline" className="mt-4">Manage notifications</Button>
         </Card>
       </div>
     </div>
