@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { MessageSquare, UserCircle } from 'lucide-react'
 
@@ -45,7 +45,8 @@ export default function Layout(){
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
               >
-                Dashboard
+                <UserCircle className="w-4 h-4" />
+                <span className="hidden sm:inline">Profile</span>
               </Link>
             </nav>
             <div className="flex items-center gap-2">

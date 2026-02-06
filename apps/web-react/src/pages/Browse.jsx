@@ -8,12 +8,15 @@ import Button from '../components/ui/Button'
 import { MapPin, Search } from 'lucide-react'
 
 export default function Browse(){
+  const [role, setRole] = useState('buyer')
   const [listings, setListings] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [query, setQuery] = useState('')
 
   useEffect(() => {
+    const storedRole = localStorage.getItem('userRole') || 'buyer'
+    setRole(storedRole)
     const apiBase = import.meta.env.VITE_API_BASE || 'http://localhost:4100'
     setLoading(true)
     fetch(`${apiBase}/api/v1/listings`)

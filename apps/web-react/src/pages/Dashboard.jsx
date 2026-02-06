@@ -8,6 +8,9 @@ import PageHeader from '../components/PageHeader'
 import { Edit, MessageSquare, CheckCircle, Clock } from 'lucide-react'
 
 export default function Dashboard(){
+  const verifiedCount = mockListings.filter(l => l.badges?.length > 0).length
+  const pendingCount = mockListings.filter(l => !l.badges?.length > 0).length
+
   return (
     <div className="max-w-4xl">
       <PageHeader
@@ -41,7 +44,7 @@ export default function Dashboard(){
           <div className="flex items-start justify-between">
             <div>
               <p className="text-gray-600 text-sm font-medium">Verified</p>
-              <p className="text-3xl font-bold text-gray-900 mt-2">{mockListings.filter(l => l.badges?.length > 0).length}</p>
+              <p className="text-3xl font-bold text-gray-900 mt-2">{verifiedCount}</p>
             </div>
             <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
               <CheckCircle className="w-6 h-6 text-green-600" />
@@ -52,7 +55,7 @@ export default function Dashboard(){
           <div className="flex items-start justify-between">
             <div>
               <p className="text-gray-600 text-sm font-medium">Pending Review</p>
-              <p className="text-3xl font-bold text-gray-900 mt-2">{mockListings.filter(l => !l.badges?.length > 0).length}</p>
+              <p className="text-3xl font-bold text-gray-900 mt-2">{pendingCount}</p>
             </div>
             <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
               <Clock className="w-6 h-6 text-yellow-600" />

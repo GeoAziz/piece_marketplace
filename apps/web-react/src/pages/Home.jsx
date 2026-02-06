@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import PageHeader from '../components/PageHeader'
@@ -6,6 +6,18 @@ import { Link } from 'react-router-dom'
 import { mockListings } from '../data/mockListings'
 
 export default function Home(){
+  const [role, setRole] = useState('buyer')
+
+  useEffect(() => {
+    const storedRole = localStorage.getItem('userRole') || 'buyer'
+    setRole(storedRole)
+  }, [])
+
+  const handleRoleChange = (nextRole) => {
+    setRole(nextRole)
+    localStorage.setItem('userRole', nextRole)
+  }
+
   return (
     <div>
       <PageHeader
